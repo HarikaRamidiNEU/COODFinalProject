@@ -879,7 +879,6 @@ public class DayCare extends javax.swing.JFrame {
 
         if (students.size() == 0) {
             studentController.addTestData();
-            // add students to classes
 
             List<Student> newStudents = studentController.getStudents();
             newStudents.forEach(s -> {
@@ -895,8 +894,6 @@ public class DayCare extends javax.swing.JFrame {
             if (model.getRowCount() == 0) {
                 students.forEach(t -> {
                     model.addRow(new Object[]{t.getId(), t.getName(), t.getAge(), t.getParentName(), t.getPhoneNumber(), t.getRegistrationDate()});
-//                      Classroom classRoom = ClassroomFactory.getClassRoom(t.getAge());
-//                classRoom.addStudentId(t.getId());
                 });
             }
 
@@ -936,23 +933,11 @@ public class DayCare extends javax.swing.JFrame {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-//        int row = tableStudents.getSelectedRow();
-//
-//        if (row < 0 ) {
-//            JOptionPane.showMessageDialog(this, "No Row is Selected", "Please Select Row", JOptionPane.ERROR_MESSAGE);
-//        } else {
-//            DefaultTableModel model = (DefaultTableModel)tableStudents.getModel();
-//            model.removeRow(row);
-//        }
-
         int row = tableStudents.getSelectedRow();
         if (row < 0) {
             JOptionPane.showMessageDialog(this, "No Row is Selected", "Please Select Row", JOptionPane.ERROR_MESSAGE);
         } else {
-            //int pkid = (int)tableTeachers.getModel().getValueAt(row, 0);
             DefaultTableModel model = (DefaultTableModel) tableStudents.getModel();
-//            String k = model.getValueAt(0, 0).toString();
-//            System.err.println(k + " is about to deleted : " + row);
 
             int pkid = Integer.parseInt(model.getValueAt(row, 0).toString());
             model.removeRow(row);
@@ -1002,28 +987,9 @@ public class DayCare extends javax.swing.JFrame {
         tfName1.setText("");
         tfCredits.setText("");
 
-        // add to bin file
-        // TODO add your handling code here:
-//       DefaultTableModel model = (DefaultTableModel) tableTeachers.getModel();
-//        Vector<Vector> tableData = model.getDataVector();
-//        
-//        // Saving the Object in a File
-//        try{
-//            FileOutputStream fos = 
-//                    new FileOutputStream("D:\\code\\swing\\Final\\OOD_Final_Project_Daycare\\DayCare\\src\\com\\ood\\ui\\teachers.bin");
-//            ObjectOutputStream oos = new ObjectOutputStream(fos);
-//            
-//            oos.writeObject(tableData);
-//            oos.close();
-//            fos.close();
-//        } catch (Exception ex){
-//            ex.printStackTrace();
-//        }
-        //push to db
         String csv = id + "," + name + "," + age + "," + credit;
         System.err.println(csv + "is added to teache db");
         teacherController.addTeacher(csv);
-        // Adding teacher to last classroom
         ClassroomFactory.getAllClassRooms().get(ClassroomFactory.getAllClassRooms().size()-1).addTeacherId(Integer.parseInt(id));
     }//GEN-LAST:event_btnAdd1ActionPerformed
 
@@ -1042,21 +1008,13 @@ public class DayCare extends javax.swing.JFrame {
         if (row < 0) {
             JOptionPane.showMessageDialog(this, "No Row is Selected", "Please Select Row", JOptionPane.ERROR_MESSAGE);
         } else {
-            //int pkid = (int)tableTeachers.getModel().getValueAt(row, 0);
             DefaultTableModel model = (DefaultTableModel) tableTeachers.getModel();
-//            String k = model.getValueAt(0, 0).toString();
-//            System.err.println(k + " is about to deleted : " + row);
-
             int pkid = Integer.parseInt(model.getValueAt(row, 0).toString());
             model.removeRow(row);
 
             System.err.println(pkid + " is deleted : " + row);
-            //int age = teacherController.getTeacherById(pkid).get().getAge();
 
             teacherController.removeTeacherById(pkid);
-
-//            Classroom classRoom = classroomFactory.getClassRoom(age);
-//            classRoom.removeStudentId(pkid);
         }
 
     }//GEN-LAST:event_btnDelete1ActionPerformed
@@ -1174,13 +1132,8 @@ public class DayCare extends javax.swing.JFrame {
         if (row < 0) {
             JOptionPane.showMessageDialog(this, "No Row is Selected", "Please Select Row", JOptionPane.ERROR_MESSAGE);
         } else {
-            //int pkid = (int)tableTeachers.getModel().getValueAt(row, 0);
             DefaultTableModel model = (DefaultTableModel) tableStudents.getModel();
-//            String k = model.getValueAt(0, 0).toString();
-//            System.err.println(k + " is about to deleted : " + row);
-
             int pkid = Integer.parseInt(model.getValueAt(row, 0).toString());
-            //model.removeRow(row);
 
             System.err.println(pkid + " is selected : " + row);
             Date date = studentController.readStudentById(pkid).map(t -> t.getRegistrationDate()).get();
@@ -1263,11 +1216,7 @@ public class DayCare extends javax.swing.JFrame {
         if (row < 0) {
             JOptionPane.showMessageDialog(this, "No Row is Selected", "Please Select Row", JOptionPane.ERROR_MESSAGE);
         } else {
-            //int pkid = (int)tableTeachers.getModel().getValueAt(row, 0);
             DefaultTableModel model = (DefaultTableModel) tableVaccines.getModel();
-//            String k = model.getValueAt(0, 0).toString();
-//            System.err.println(k + " is about to deleted : " + row);
-
             int pkid = Integer.parseInt(model.getValueAt(row, 0).toString());
             model.removeRow(row);
 
@@ -1278,18 +1227,13 @@ public class DayCare extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteVacButtonActionPerformed
 
     private void Renewal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Renewal1ActionPerformed
-        // TODO add your handling code here:
         int row = tableVaccines.getSelectedRow();
         if (row < 0) {
             JOptionPane.showMessageDialog(this, "No Row is Selected", "Please Select Row", JOptionPane.ERROR_MESSAGE);
         } else {
-            //int pkid = (int)tableTeachers.getModel().getValueAt(row, 0);
             DefaultTableModel model = (DefaultTableModel) tableVaccines.getModel();
-//            String k = model.getValueAt(0, 0).toString();
-//            System.err.println(k + " is about to deleted : " + row);
 
             int pkid = Integer.parseInt(model.getValueAt(row, 0).toString());
-            //model.removeRow(row);
 
             System.err.println(pkid + " is selected : " + row);
             Immunization vaccination = vaccinationController.getVaccinesById(pkid).get();
@@ -1300,18 +1244,12 @@ public class DayCare extends javax.swing.JFrame {
             c.setTime(vaccination.getV1t1());
             c.add(Calendar.MONTH, 3);
             JOptionPane.showMessageDialog(this, c.getTime().toString(), " Next Immunization date(Dose 2)", JOptionPane.ERROR_MESSAGE);
-                //JOptionPane.showMessageDialog(this, "Student is to be vaccinated", "Vaccine1 dose 2 missing alert", JOptionPane.ERROR_MESSAGE);
             } else if(vaccination.readVaccine2() == null){
             Calendar c = Calendar.getInstance();
             c.setTime(vaccination.getV1t1());
             c.add(Calendar.YEAR, 1);
             JOptionPane.showMessageDialog(this, c.getTime().toString(), " Next Immunization date(Vaccine 2)", JOptionPane.ERROR_MESSAGE);
-                //JOptionPane.showMessageDialog(this, "Student is to be vaccinated", "Vaccine2 missing alert", JOptionPane.ERROR_MESSAGE);
             }
-//            Calendar c = Calendar.getInstance();
-//            c.setTime(date);
-//            c.add(Calendar.YEAR, 1);
-//            JOptionPane.showMessageDialog(this, c.getTime().toString(), " Next renewal date ", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_Renewal1ActionPerformed
 
@@ -1319,32 +1257,6 @@ public class DayCare extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(AllDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(AllDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(AllDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(AllDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
