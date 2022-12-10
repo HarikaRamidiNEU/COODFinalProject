@@ -98,7 +98,7 @@ public class ClassesjPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public void populateClassesInfo(){
-        List<Classroom> classrooms = ClassroomFactory.readAllClassRooms();
+        List<Classroom> classrooms = ClassroomFactory.getAllClassRooms();
             DefaultTableModel model = (DefaultTableModel) tableClassroom.getModel();
             model.setRowCount(0);
             //if (model.getRowCount() == 0) {

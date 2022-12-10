@@ -62,7 +62,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
             List<Student> newStudents = studentController.getStudents();
             newStudents.forEach(s -> {
 
-                Classroom classRoom = ClassroomFactory.readClassRoom(s.getAge());
+                Classroom classRoom = ClassroomFactory.getClassRoom(s.getAge());
                 classRoom.addStudentId(s.getId());
 
             });
@@ -396,7 +396,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
         String parentContact = tfParentContact.getText();
         String rd = tfDate.getText();
 
-        Classroom classRoom = classroomFactory.readClassRoom(Integer.parseInt(age));
+        Classroom classRoom = ClassroomFactory.getClassRoom(Integer.parseInt(age));
         System.out.print("classr room id is : " + classRoom.getClassId());
 
         int studentCount = classRoom.getStudentIdList().size();
@@ -434,7 +434,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 
             classRoom.addStudentId(Integer.parseInt(id));
 
-            ClassroomFactory.diplayAllClassrooms();
+            ClassroomFactory.showAllClassrooms();
 
         }
     }//GEN-LAST:event_btnAddActionPerformed
@@ -480,7 +480,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
             int age = studentController.readStudentById(pkid).get().getAge();
             studentController.removeStudentById(pkid);
 
-            Classroom classRoom = classroomFactory.readClassRoom(age);
+            Classroom classRoom = ClassroomFactory.getClassRoom(age);
             classRoom.deleteStudentId(pkid);
         }
     }//GEN-LAST:event_btnDeleteActionPerformed

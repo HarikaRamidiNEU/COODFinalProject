@@ -884,7 +884,7 @@ public class DayCare extends javax.swing.JFrame {
             List<Student> newStudents = studentController.getStudents();
             newStudents.forEach(s -> {
 
-                Classroom classRoom = ClassroomFactory.readClassRoom(s.getAge());
+                Classroom classRoom = ClassroomFactory.getClassRoom(s.getAge());
                 classRoom.addStudentId(s.getId());
 
             });
@@ -920,7 +920,7 @@ public class DayCare extends javax.swing.JFrame {
         }
     }
         private void populateClassesInfo(){
-            List<Classroom> classrooms = ClassroomFactory.readAllClassRooms();
+            List<Classroom> classrooms = ClassroomFactory.getAllClassRooms();
             DefaultTableModel model = (DefaultTableModel) tableClassroom.getModel();
             model.setRowCount(0);
             //if (model.getRowCount() == 0) {
@@ -961,7 +961,7 @@ public class DayCare extends javax.swing.JFrame {
             int age = studentController.readStudentById(pkid).get().getAge();
             studentController.removeStudentById(pkid);
 
-            Classroom classRoom = classroomFactory.readClassRoom(age);
+            Classroom classRoom = ClassroomFactory.getClassRoom(age);
             classRoom.deleteStudentId(pkid);
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -1024,7 +1024,7 @@ public class DayCare extends javax.swing.JFrame {
         System.err.println(csv + "is added to teache db");
         teacherController.addTeacher(csv);
         // Adding teacher to last classroom
-        ClassroomFactory.readAllClassRooms().get(ClassroomFactory.readAllClassRooms().size()-1).addTeacherId(Integer.parseInt(id));
+        ClassroomFactory.getAllClassRooms().get(ClassroomFactory.getAllClassRooms().size()-1).addTeacherId(Integer.parseInt(id));
     }//GEN-LAST:event_btnAdd1ActionPerformed
 
     private void btnClear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClear1ActionPerformed
@@ -1096,7 +1096,7 @@ public class DayCare extends javax.swing.JFrame {
         String parentContact = tfParentContact.getText();
         String rd = tfDate.getText();
 
-        Classroom classRoom = classroomFactory.readClassRoom(Integer.parseInt(age));
+        Classroom classRoom = ClassroomFactory.getClassRoom(Integer.parseInt(age));
         System.out.print("classr room id is : " + classRoom.getClassId());
 
         int studentCount = classRoom.getStudentIdList().size();
@@ -1134,7 +1134,7 @@ public class DayCare extends javax.swing.JFrame {
 
             classRoom.addStudentId(Integer.parseInt(id));
 
-            ClassroomFactory.diplayAllClassrooms();
+            ClassroomFactory.showAllClassrooms();
 
         }
     }//GEN-LAST:event_btnAddActionPerformed
@@ -1433,7 +1433,7 @@ public class DayCare extends javax.swing.JFrame {
 
             // Add teachers to classroom
             List<Teacher> newTeachers = teacherController.getAllTeachers();
-            List<Classroom> allClassRooms = ClassroomFactory.readAllClassRooms();
+            List<Classroom> allClassRooms = ClassroomFactory.getAllClassRooms();
             int counter = 0;
             try {
                 for (Classroom classroom : allClassRooms) {

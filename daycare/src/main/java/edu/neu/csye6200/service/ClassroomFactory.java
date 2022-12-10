@@ -33,8 +33,7 @@ public class ClassroomFactory {
     }
 
     // Factory
-    public static Classroom readClassRoom(int age) {
-        
+    public static Classroom getClassRoom(int age) {
         return map.get(readStudentClass(age));
     }
     
@@ -54,12 +53,12 @@ public class ClassroomFactory {
         return 6;
     }
     
-    public static List<Classroom> readAllClassRooms() {
+    public static List<Classroom> getAllClassRooms() {
         return map.values().stream().collect(Collectors.toList());
     }
     
-    public static void diplayAllClassrooms() {
-        readAllClassRooms().forEach(System.out::println);
+    public static void showAllClassrooms() {
+    	getAllClassRooms().forEach(System.out::println);
     }
     
 }
