@@ -105,7 +105,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginPanel.setBackground(new java.awt.Color(207, 255, 255));
+        loginPanel.setBackground(new java.awt.Color(255, 252, 45));
         loginPanel.setPreferredSize(new java.awt.Dimension(1000, 750));
 
         jLabel3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
@@ -137,7 +137,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Screenshot 2022-05-01 003706.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HomepageDaycare.png"))); // NOI18N
         jLabel7.setText("jLabel7");
 
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
