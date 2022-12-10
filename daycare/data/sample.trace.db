@@ -2946,3 +2946,9 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/harik
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 27 more
+2022-12-10 17:03:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "f71b2e99-7b4e-4c0c-961a-82faa0dc28e0"; SQL statement:
+select teacher0_.id as id1_2_0_, teacher0_.age as age2_2_0_, teacher0_.name as name3_2_0_, teacher0_.credits as credits4_2_0_ from teacher teacher0_ where teacher0_.id=? [22018-200]
+2022-12-10 17:15:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "48965201-455b-496c-940f-6bf683fda4b2"; SQL statement:
+select teacher0_.id as id1_2_0_, teacher0_.age as age2_2_0_, teacher0_.name as name3_2_0_, teacher0_.credits as credits4_2_0_ from teacher teacher0_ where teacher0_.id=? [22018-200]

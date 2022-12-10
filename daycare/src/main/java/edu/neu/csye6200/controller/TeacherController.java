@@ -33,10 +33,10 @@ public class TeacherController {
     public List<Teacher> getAllTeachers(){
         return teacherService.getAllTeachers();
     }
-    public void removeTeacherById(Integer id){
+    public void removeTeacherById(int id){
         teacherService.deleteTeacherById(id);
     }
-    public Optional<Teacher> getTeacherById(Integer id){
+    public Optional<Teacher> getTeacherById(int id){
         return teacherService.getTeacherById(id);
     }
 

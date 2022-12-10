@@ -11,9 +11,13 @@ import edu.neu.csye6200.controller.VaccinationController;
 import edu.neu.csye6200.model.Classroom;
 import edu.neu.csye6200.model.Teacher;
 import edu.neu.csye6200.service.ClassroomFactory;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+
 import javax.annotation.PostConstruct;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -87,6 +91,13 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		}
 
 	}
+	
+	private int generateID() {
+		Date dNow = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("MMddhmmss");
+        String datetime = ft.format(dNow);
+        return Integer.parseInt(datetime);
+	}
 
 	/**
 	 * This method is called from within the constructor to initialize the form.
@@ -99,8 +110,6 @@ public class TeachersjPanel extends javax.swing.JPanel {
 
 		jLabel3 = new javax.swing.JLabel();
 		jPanel4 = new javax.swing.JPanel();
-		jLabel10 = new javax.swing.JLabel();
-		tfId1 = new javax.swing.JTextField();
 		jLabel11 = new javax.swing.JLabel();
 		tfName1 = new javax.swing.JTextField();
 		jLabel12 = new javax.swing.JLabel();
@@ -125,18 +134,6 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "New Teacher", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 		jPanel4.setForeground(java.awt.Color.gray);
 		jPanel4.setOpaque(false);
-
-		jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		jLabel10.setForeground(java.awt.Color.gray);
-		jLabel10.setText("Id");
-
-		tfId1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		tfId1.setToolTipText("");
-		tfId1.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				tfId1ActionPerformed(evt);
-			}
-		});
 
 		jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 		jLabel11.setForeground(java.awt.Color.gray);
@@ -241,7 +238,6 @@ public class TeachersjPanel extends javax.swing.JPanel {
 										.addContainerGap()
 										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 												.addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 												.addGroup(jPanel4Layout.createSequentialGroup()
 														.addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
 														.addGap(0, 0, Short.MAX_VALUE)))
@@ -249,7 +245,6 @@ public class TeachersjPanel extends javax.swing.JPanel {
 										.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
 												.addComponent(tfAge1, javax.swing.GroupLayout.Alignment.LEADING)
 												.addComponent(tfName1)
-												.addComponent(tfId1)
 												.addComponent(tfCredits))))
 						.addGap(269, 269, 269))
 				);
@@ -265,10 +260,6 @@ public class TeachersjPanel extends javax.swing.JPanel {
 								.addComponent(jLabel12)
 								.addComponent(tfAge1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
 						.addGap(32, 32, 32)
-						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(jLabel10)
-								.addComponent(tfId1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addGap(18, 18, 18)
 						.addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
 								.addComponent(jLabel13)
 								.addComponent(tfCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -324,7 +315,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 	private void btnAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd1ActionPerformed
 		// TODO add your handling code here:
 
-		String id = tfId1.getText();
+		String id = String.valueOf(generateID());
 		String age = tfAge1.getText();
 		String name = tfName1.getText();
 		String credit = tfCredits.getText();
@@ -336,7 +327,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 			model.addRow(new Object[]{id, name, age, credit});
 		}
 
-		tfId1.setText("");
+//		tfId1.setText("");
 		tfAge1.setText("");
 		tfName1.setText("");
 		tfCredits.setText("");
@@ -347,7 +338,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 	}//GEN-LAST:event_btnAdd1ActionPerformed
 
 	private void btnClear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClear1ActionPerformed
-		tfId1.setText("");
+//		tfId1.setText("");
 		tfAge1.setText("");
 		tfName1.setText("");
 		tfCredits.setText("");
@@ -372,7 +363,6 @@ public class TeachersjPanel extends javax.swing.JPanel {
 	private javax.swing.JButton btnAdd1;
 	private javax.swing.JButton btnClear1;
 	private javax.swing.JButton btnDelete1;
-	private javax.swing.JLabel jLabel10;
 	private javax.swing.JLabel jLabel11;
 	private javax.swing.JLabel jLabel12;
 	private javax.swing.JLabel jLabel13;
@@ -382,7 +372,6 @@ public class TeachersjPanel extends javax.swing.JPanel {
 	private javax.swing.JTable tableTeachers;
 	private javax.swing.JTextField tfAge1;
 	private javax.swing.JTextField tfCredits;
-	private javax.swing.JTextField tfId1;
 	private javax.swing.JTextField tfName1;
 	// End of variables declaration//GEN-END:variables
 }

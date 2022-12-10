@@ -11,6 +11,8 @@ import edu.neu.csye6200.controller.VaccinationController;
 import edu.neu.csye6200.model.Classroom;
 import edu.neu.csye6200.model.Student;
 import edu.neu.csye6200.service.ClassroomFactory;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -73,13 +75,19 @@ public class StudentsjPanel extends javax.swing.JPanel {
             if (model.getRowCount() == 0) {
                 students.forEach(t -> {
                     model.addRow(new Object[]{t.getId(), t.getName(), t.getAge(), t.getParentName(), t.getPhoneNumber(), t.getRegistrationDate()});
-//                      Classroom classRoom = ClassroomFactory.getClassRoom(t.getAge());
-//                classRoom.addStudentId(t.getId());
                 });
             }
 
         }
     }
+    
+    private int generateID() {
+		Date dNow = new Date();
+        SimpleDateFormat ft = new SimpleDateFormat("MMddhmmss");
+        String datetime = ft.format(dNow);
+        return Integer.parseInt(datetime);
+	}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -92,8 +100,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        tfId = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         tfName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -130,18 +136,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "New Student", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(0, 51, 102));
         jPanel3.setOpaque(false);
-
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel4.setText("Id");
-
-        tfId.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        tfId.setToolTipText("");
-        tfId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfIdActionPerformed(evt);
-            }
-        });
 
         jLabel5.setBackground(new java.awt.Color(0, 153, 255));
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -255,8 +249,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
@@ -282,7 +275,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
                         .addGap(31, 31, 31))
                     .addComponent(tfParentName)
                     .addComponent(tfName)
-                    .addComponent(tfId)
                     .addComponent(tfAge, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tfDate)
                     .addComponent(tfParentContact, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -291,10 +283,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -389,7 +377,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        String id = tfId.getText();
+        String id = String.valueOf(generateID());
         String age = tfAge.getText();
         String name = tfName.getText();
         String parentName = tfParentName.getText();
@@ -416,8 +404,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
                 DefaultTableModel model = (DefaultTableModel) tableStudents.getModel();
                 model.addRow(new Object[]{id, name, age, parentName, parentContact, rd});
             }
-
-            tfId.setText("");
             tfAge.setText("");
             tfName.setText("");
             tfParentName.setText("");
@@ -441,7 +427,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
-        tfId.setText("");
         tfAge.setText("");
         tfName.setText("");
         tfParentName.setText("");
@@ -516,7 +501,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -527,7 +511,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
     private javax.swing.JTable tableStudents;
     private javax.swing.JTextField tfAge;
     private javax.swing.JTextField tfDate;
-    private javax.swing.JTextField tfId;
     private javax.swing.JTextField tfName;
     private javax.swing.JTextField tfParentContact;
     private javax.swing.JTextField tfParentName;

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 
 import edu.neu.csye6200.model.Teacher;
@@ -35,11 +36,11 @@ public class TeacherService {
         teacherRepository.save(tf.getObject(csv));
     }
 
-    public Optional<Teacher> getTeacherById(Integer id){
+    public Optional<Teacher> getTeacherById(int id){
         return teacherRepository.findById(id);
     }
 
-    public void deleteTeacherById(Integer id){
+    public void deleteTeacherById(int id){
         teacherRepository.deleteById(id);
     }
 
