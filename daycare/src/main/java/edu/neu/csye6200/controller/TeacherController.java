@@ -9,40 +9,39 @@ import org.springframework.stereotype.Component;
 
 import edu.neu.csye6200.model.Teacher;
 import edu.neu.csye6200.service.TeacherService;
-import edu.neu.csye6200.util.TestDataUtilities;
-
-
+import edu.neu.csye6200.util.SeedDataUtility;
 
 @Component
 public class TeacherController {
 
 	private String filePath = Paths.get("", "src/main/resources", "Teachers.csv").toAbsolutePath().toString();
-	
-    @Autowired
-    TeacherService teacherService;
 
-    public void addTestData(){
+	@Autowired
+	TeacherService teacherService;
 
-        teacherService.saveTeachers(new TestDataUtilities().populateTeacherData(filePath));
-    }
+	public void addTestData() {
 
-    public void displayAllTeachers(){
-        teacherService.getAllTeachers().forEach(System.out::println);
-    }
+		teacherService.saveTeachers(new SeedDataUtility().populateTeacherData(filePath));
+	}
 
-    public List<Teacher> getAllTeachers(){
-        return teacherService.getAllTeachers();
-    }
-    public void removeTeacherById(int id){
-        teacherService.deleteTeacherById(id);
-    }
-    public Optional<Teacher> getTeacherById(int id){
-        return teacherService.getTeacherById(id);
-    }
+	public void displayAllTeachers() {
+		teacherService.getAllTeachers().forEach(System.out::println);
+	}
 
-    public void addTeacher(String csv){
-        teacherService.saveTeacher(csv);
-    }
+	public List<Teacher> getAllTeachers() {
+		return teacherService.getAllTeachers();
+	}
 
+	public void removeTeacherById(int id) {
+		teacherService.deleteTeacherById(id);
+	}
+
+	public Optional<Teacher> getTeacherById(int id) {
+		return teacherService.getTeacherById(id);
+	}
+
+	public void addTeacher(String csv) {
+		teacherService.saveTeacher(csv);
+	}
 
 }

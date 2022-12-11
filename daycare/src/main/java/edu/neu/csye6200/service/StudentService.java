@@ -9,36 +9,37 @@ import org.springframework.stereotype.Service;
 
 import edu.neu.csye6200.model.Student;
 import edu.neu.csye6200.repository.StudentRepository;
-
+import edu.neu.csye6200.service.factory.StudentFactory;
 
 @Service
 public class StudentService {
-    @Autowired
-    StudentRepository studentRepository;
-    StudentFactory sf = new StudentFactory();
-    public List<Student> getAllStudents(){
-        List<Student> students = new ArrayList<>();
-        studentRepository.findAll().forEach(students::add);
-        return students;
-    }
+	@Autowired
+	StudentRepository studentRepository;
+	StudentFactory sf = new StudentFactory();
 
-    public void saveStudents(List<Student> students){
-        studentRepository.saveAll(students);
-    }
+	public List<Student> getAllStudents() {
+		List<Student> students = new ArrayList<>();
+		studentRepository.findAll().forEach(students::add);
+		return students;
+	}
 
-    public void saveStudent(Student student){
-        studentRepository.save(student);
-    }
+	public void saveStudents(List<Student> students) {
+		studentRepository.saveAll(students);
+	}
 
-    public void saveStudent(String csv){
-        studentRepository.save(sf.getObject(csv));
-    }
+	public void saveStudent(Student student) {
+		studentRepository.save(student);
+	}
 
-    public Optional<Student> getStudentById(Integer id){
-        return studentRepository.findById(id);
-    }
+	public void saveStudent(String csv) {
+		studentRepository.save(sf.getObject(csv));
+	}
 
-    public void deleteStudentById(Integer id){
-        studentRepository.deleteById(id);
-    }
+	public Optional<Student> getStudentById(Integer id) {
+		return studentRepository.findById(id);
+	}
+
+	public void deleteStudentById(Integer id) {
+		studentRepository.deleteById(id);
+	}
 }

@@ -6,12 +6,12 @@ import java.util.List;
 import edu.neu.csye6200.model.Immunization;
 import edu.neu.csye6200.model.Student;
 import edu.neu.csye6200.model.Teacher;
-import edu.neu.csye6200.service.StudentFactory;
-import edu.neu.csye6200.service.TeacherFactory;
-import edu.neu.csye6200.service.VaccinationFactory;
+import edu.neu.csye6200.service.factory.StudentFactory;
+import edu.neu.csye6200.service.factory.TeacherFactory;
+import edu.neu.csye6200.service.factory.VaccinationFactory;
 
 
-public class TestDataUtilities {
+public class SeedDataUtility {
     TeacherFactory tf = new TeacherFactory();
     StudentFactory sf = new StudentFactory();
     VaccinationFactory vf = new VaccinationFactory();

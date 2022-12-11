@@ -1,20 +1,19 @@
 package edu.neu.csye6200.model;
 
-import javax.persistence.Entity;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Entity;
 
+import edu.neu.csye6200.util.ConvertUtil;
 
 @Entity
-public class Student extends AbstractPerson{
+public class Student extends AbstractPerson {
 	private int grade;
 	private Date registrationDate;
 	private String address;
 	private String phoneNumber;
 	private String parentName;
 	private String parentEmail;
-
 
 	public int getGrade() {
 		return grade;
@@ -67,7 +66,8 @@ public class Student extends AbstractPerson{
 	public Student() {
 	}
 
-	public Student(int age, String name, int grade, Date registrationDate, String address, String phoneNumber, String parentName, String parentEmail) {
+	public Student(int age, String name, int grade, Date registrationDate, String address, String phoneNumber,
+			String parentName, String parentEmail) {
 		super(age, name);
 		this.grade = grade;
 		this.registrationDate = registrationDate;
@@ -77,7 +77,8 @@ public class Student extends AbstractPerson{
 		this.parentEmail = parentEmail;
 	}
 
-	public Student(int id, int age, String name, int grade, Date registrationDate, String address, String phoneNumber, String parentName, String parentEmail) {
+	public Student(int id, int age, String name, int grade, Date registrationDate, String address, String phoneNumber,
+			String parentName, String parentEmail) {
 		super(id, age, name);
 		this.grade = grade;
 		this.registrationDate = registrationDate;
@@ -89,32 +90,25 @@ public class Student extends AbstractPerson{
 
 	@Override
 	public String toString() {
-		return "Student{" +
-				"grade=" + grade +
-				", registrationDate=" + registrationDate +
-				", address='" + address + '\'' +
-				", phoneNumber='" + phoneNumber + '\'' +
-				", parentName='" + parentName + '\'' +
-				", parentEmail='" + parentEmail + '\'' +
-				"} " + super.toString();
+		return "Student{" + "grade=" + grade + ", registrationDate=" + registrationDate + ", address='" + address + '\''
+				+ ", phoneNumber='" + phoneNumber + '\'' + ", parentName='" + parentName + '\'' + ", parentEmail='"
+				+ parentEmail + '\'' + "} " + super.toString();
 	}
 
 	public Student(String csvData) {
 		super();
 		try {
 			String[] field = csvData.split(",");
-			this.setId(Integer.parseInt(field[0]));
+			this.setId(ConvertUtil.strToInt(field[0]));
 			this.setName(field[1]);
-			this.setAge(Integer.parseInt(field[2]));
-			this.setGrade(Integer.parseInt(field[3]));
-			this.registrationDate = new SimpleDateFormat("MM/dd/yyyy").parse(field[4]);
+			this.setAge(ConvertUtil.strToInt(field[2]));
+			this.setGrade(ConvertUtil.strToInt(field[3]));
+			this.registrationDate = ConvertUtil.strToDate(field[4]);
 			this.parentName = field[5];
 			this.address = field[6];
 			this.phoneNumber = field[7];
 			this.parentEmail = field[8];
-		}
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}

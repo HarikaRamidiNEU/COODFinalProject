@@ -4,12 +4,12 @@
  */
 package edu.neu.csye6200.repository;
 
-import edu.neu.csye6200.model.Immunization;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import edu.neu.csye6200.model.Immunization;
 
 @Repository
-public interface VaccinationRepository extends CrudRepository<Immunization, Integer>{
-    
+public interface VaccinationRepository extends CrudRepository<Immunization, Integer> {
+
 }
