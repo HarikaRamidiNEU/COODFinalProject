@@ -7,7 +7,7 @@ package edu.neu.csye6200.service.factory;
 
 import edu.neu.csye6200.model.Immunization;
 
-public class VaccinationFactory {
+public class ImmunizationFactory {
 	public Immunization getObject(String csvData) {
 		return new Immunization(csvData);
 	}

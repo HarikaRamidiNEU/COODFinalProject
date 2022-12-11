@@ -12,38 +12,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import edu.neu.csye6200.model.Immunization;
-import edu.neu.csye6200.service.VaccinationService;
+import edu.neu.csye6200.service.ImmunizationService;
 import edu.neu.csye6200.util.SeedDataUtility;
 
 @Component
-public class VaccinationController {
+public class ImmunizationController {
 
 	private String filePath = Paths.get("", "src/main/resources", "Vaccines.csv").toAbsolutePath().toString();
 
 	@Autowired
-	VaccinationService vaccinationService;
+	ImmunizationService immunizationService;
 
 	public void addTestData() {
-		vaccinationService.saveVaccinations(new SeedDataUtility().populateVaccineData(filePath));
+		immunizationService.saveVaccinations(new SeedDataUtility().populateVaccineData(filePath));
 	}
 
 	public void displayAllVaccines() {
-		vaccinationService.getAllVaccinations().forEach(System.out::println);
+		immunizationService.getAllVaccinations().forEach(System.out::println);
 	}
 
 	public List<Immunization> getAllVaccines() {
-		return vaccinationService.getAllVaccinations();
+		return immunizationService.getAllVaccinations();
 	}
 
 	public void removeVaccineById(Integer id) {
-		vaccinationService.deleteVaccinationsById(id);
+		immunizationService.deleteVaccinationsById(id);
 	}
 
 	public Optional<Immunization> getVaccinesById(Integer id) {
-		return vaccinationService.getVaccinationById(id);
+		return immunizationService.getVaccinationById(id);
 	}
 
 	public void addVaccine(String csv) {
-		vaccinationService.saveVaccination(csv);
+		immunizationService.saveVaccination(csv);
 	}
 }

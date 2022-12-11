@@ -15,8 +15,6 @@ import org.springframework.stereotype.Component;
 
 import edu.neu.csye6200.model.Classroom;
 
-
-@Component
 public class ClassroomFactory {
 
     // Creating Static Map

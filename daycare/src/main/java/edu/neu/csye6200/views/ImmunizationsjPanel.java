@@ -5,7 +5,6 @@
  */
 package edu.neu.csye6200.views;
 
-import java.awt.Color;
 import java.util.Calendar;
 import java.util.List;
 
@@ -16,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import edu.neu.csye6200.controller.VaccinationController;
+import edu.neu.csye6200.controller.ImmunizationController;
 import edu.neu.csye6200.model.Immunization;
 
 @Component
@@ -27,7 +26,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 	 */
 
 	@Autowired
-	VaccinationController vaccinationController;
+	ImmunizationController vaccinationController;
 	
 	public ImmunizationsjPanel() {
 		initComponents();
@@ -314,7 +313,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 
 		tableVaccines.setBackground(new java.awt.Color(153, 204, 255));
 		tableVaccines.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-		tableVaccines.setForeground(Color.WHITE);
+		tableVaccines.setForeground(new java.awt.Color(0, 51, 204));
 		tableVaccines.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 
 		}, new String[] { "Person Id", "Vaccine1", "Dose 1", "Dose 2", "Vaccine2", "Dose1" }) {

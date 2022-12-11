@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 import edu.neu.csye6200.model.Immunization;
 
 @Repository
-public interface VaccinationRepository extends CrudRepository<Immunization, Integer> {
+public interface ImmunizationRepository extends CrudRepository<Immunization, Integer> {
 
 }

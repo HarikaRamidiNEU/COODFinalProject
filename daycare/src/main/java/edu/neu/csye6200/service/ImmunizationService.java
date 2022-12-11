@@ -12,39 +12,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.neu.csye6200.model.Immunization;
-import edu.neu.csye6200.repository.VaccinationRepository;
-import edu.neu.csye6200.service.factory.VaccinationFactory;
+import edu.neu.csye6200.repository.ImmunizationRepository;
+import edu.neu.csye6200.service.factory.ImmunizationFactory;
+import edu.neu.csye6200.service.singleton.ImmunizationFactorySingleton;
 
 @Service
-public class VaccinationService {
+public class ImmunizationService {
 	@Autowired
-	VaccinationRepository vaccinationRepository;
-	VaccinationFactory vf = new VaccinationFactory();
+	ImmunizationRepository immunizationRepository;
+	ImmunizationFactory vf = ImmunizationFactorySingleton.getInstance().getFactory();
 
 	public List<Immunization> getAllVaccinations() {
 		List<Immunization> vaccinations = new ArrayList<>();
-		vaccinationRepository.findAll().forEach(vaccinations::add);
+		immunizationRepository.findAll().forEach(vaccinations::add);
 		return vaccinations;
 	}
 
 	public void saveVaccinations(List<Immunization> vaccinations) {
-		vaccinationRepository.saveAll(vaccinations);
+		immunizationRepository.saveAll(vaccinations);
 	}
 
 	public void saveVaccinations(Immunization vaccination) {
-		vaccinationRepository.save(vaccination);
+		immunizationRepository.save(vaccination);
 	}
 
 	public void saveVaccination(String csv) {
-		vaccinationRepository.save(vf.getObject(csv));
+		immunizationRepository.save(vf.getObject(csv));
 	}
 
 	public Optional<Immunization> getVaccinationById(Integer id) {
-		return vaccinationRepository.findById(id);
+		return immunizationRepository.findById(id);
 	}
 
 	public void deleteVaccinationsById(Integer id) {
-		vaccinationRepository.deleteById(id);
+		immunizationRepository.deleteById(id);
 	}
 
 }

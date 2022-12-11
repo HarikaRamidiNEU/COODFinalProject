@@ -19,6 +19,7 @@ import edu.neu.csye6200.views.ImmunizationsjPanel;
 import edu.neu.csye6200.views.StudentsjPanel;
 import edu.neu.csye6200.views.TeachersjPanel;
 
+
 @SpringBootApplication
 public class MainFrame extends javax.swing.JFrame implements Runnable {
 

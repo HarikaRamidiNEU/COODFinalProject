@@ -6,15 +6,17 @@ import java.util.List;
 import edu.neu.csye6200.model.Immunization;
 import edu.neu.csye6200.model.Student;
 import edu.neu.csye6200.model.Teacher;
+import edu.neu.csye6200.service.factory.ImmunizationFactory;
 import edu.neu.csye6200.service.factory.StudentFactory;
 import edu.neu.csye6200.service.factory.TeacherFactory;
-import edu.neu.csye6200.service.factory.VaccinationFactory;
+import edu.neu.csye6200.service.singleton.ImmunizationFactorySingleton;
+import edu.neu.csye6200.service.singleton.PersonFactorySingleton;
 
 
 public class SeedDataUtility {
-    TeacherFactory tf = new TeacherFactory();
-    StudentFactory sf = new StudentFactory();
-    VaccinationFactory vf = new VaccinationFactory();
+    TeacherFactory tf = PersonFactorySingleton.getInstance().getTeacherFactory();
+    StudentFactory sf = PersonFactorySingleton.getInstance().getStudentFactory();
+    ImmunizationFactory vf = ImmunizationFactorySingleton.getInstance().getFactory();
     
     public List<Teacher> populateTeacherData(String csv){
         List<Teacher> teachers = new ArrayList<>();

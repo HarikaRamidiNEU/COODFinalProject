@@ -10,12 +10,13 @@ import org.springframework.stereotype.Service;
 import edu.neu.csye6200.model.Student;
 import edu.neu.csye6200.repository.StudentRepository;
 import edu.neu.csye6200.service.factory.StudentFactory;
+import edu.neu.csye6200.service.singleton.PersonFactorySingleton;
 
 @Service
 public class StudentService {
 	@Autowired
 	StudentRepository studentRepository;
-	StudentFactory sf = new StudentFactory();
+	StudentFactory sf = PersonFactorySingleton.getInstance().getStudentFactory();
 
 	public List<Student> getAllStudents() {
 		List<Student> students = new ArrayList<>();
