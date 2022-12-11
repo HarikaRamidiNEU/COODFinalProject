@@ -21,6 +21,7 @@ import edu.neu.csye6200.controller.StudentController;
 import edu.neu.csye6200.model.Classroom;
 import edu.neu.csye6200.model.Student;
 import edu.neu.csye6200.service.factory.ClassroomFactory;
+import edu.neu.csye6200.util.ConvertUtil;
 
 @Component
 public class StudentsjPanel extends javax.swing.JPanel {
@@ -30,7 +31,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 	 */
 	@Autowired
 	StudentController studentController;
-	
+
 	public StudentsjPanel() {
 		initComponents();
 	}
@@ -50,7 +51,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
 
 		if (students.size() > 0) {
 			studentController.addTestData();
-			// add students to classes
 
 			List<Student> newStudents = studentController.getStudents();
 			newStudents.forEach(s -> {
@@ -66,9 +66,6 @@ public class StudentsjPanel extends javax.swing.JPanel {
 				});
 			}
 		}
-//        else {
-//           
-//        }
 	}
 
 	private int generateID() {
@@ -224,52 +221,52 @@ public class StudentsjPanel extends javax.swing.JPanel {
 		javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
 		jPanel3.setLayout(jPanel3Layout);
 		jPanel3Layout
-				.setHorizontalGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(jPanel3Layout.createSequentialGroup()
-								.addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(jPanel3Layout.createSequentialGroup().addGap(23, 23, 23)
-												.addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 125,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74,
-														Short.MAX_VALUE)
-												.addComponent(btnClear).addGap(61, 61, 61))
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout
-												.createSequentialGroup().addContainerGap()
-												.addGroup(jPanel3Layout
-														.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE,
-																javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-										.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
-												.addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-										.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
-												.addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-										.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
-												.addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-										.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
-												.addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE,
-														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-								.addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(jPanel3Layout.createSequentialGroup()
-												.addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 125,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65,
-														Short.MAX_VALUE)
-												.addComponent(Renewal, javax.swing.GroupLayout.PREFERRED_SIZE, 136,
-														javax.swing.GroupLayout.PREFERRED_SIZE)
-												.addGap(31, 31, 31))
-										.addComponent(tfParentName).addComponent(tfName)
-										.addComponent(tfAge, javax.swing.GroupLayout.Alignment.TRAILING)
-										.addComponent(tfDate)
-										.addComponent(tfParentContact, javax.swing.GroupLayout.Alignment.TRAILING))
-								.addContainerGap()));
+		.setHorizontalGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addGroup(jPanel3Layout.createSequentialGroup()
+						.addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(jPanel3Layout.createSequentialGroup().addGap(23, 23, 23)
+										.addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 125,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74,
+												Short.MAX_VALUE)
+										.addComponent(btnClear).addGap(61, 61, 61))
+								.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout
+										.createSequentialGroup().addContainerGap()
+										.addGroup(jPanel3Layout
+												.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+												.addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE,
+														javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+								.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
+										.addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE,
+												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+								.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
+										.addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE,
+												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+								.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
+										.addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE,
+												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+								.addGroup(jPanel3Layout.createSequentialGroup().addContainerGap()
+										.addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE,
+												javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+						.addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(jPanel3Layout.createSequentialGroup()
+										.addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 125,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65,
+												Short.MAX_VALUE)
+										.addComponent(Renewal, javax.swing.GroupLayout.PREFERRED_SIZE, 136,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addGap(31, 31, 31))
+								.addComponent(tfParentName).addComponent(tfName)
+								.addComponent(tfAge, javax.swing.GroupLayout.Alignment.TRAILING)
+								.addComponent(tfDate)
+								.addComponent(tfParentContact, javax.swing.GroupLayout.Alignment.TRAILING))
+						.addContainerGap()));
 		jPanel3Layout.setVerticalGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addGroup(jPanel3Layout.createSequentialGroup()
 						.addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -335,12 +332,12 @@ public class StudentsjPanel extends javax.swing.JPanel {
 		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
 				javax.swing.GroupLayout.Alignment.TRAILING,
 				layout.createSequentialGroup().addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(jLabel3).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jScrollPane1,
-								javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(1335, 1335, 1335)));
+				.addComponent(jLabel3).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+				.addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE,
+						javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(jScrollPane1,
+						javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addGap(1335, 1335, 1335)));
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_tfNameActionPerformed
@@ -362,48 +359,104 @@ public class StudentsjPanel extends javax.swing.JPanel {
 		String parentName = tfParentName.getText();
 		String parentContact = tfParentContact.getText();
 		String rd = tfDate.getText();
-
-		Classroom classRoom = ClassroomFactory.getClassRoom(Integer.parseInt(age));
-		System.out.print("classr room id is : " + classRoom.getClassId());
-
-		int studentCount = classRoom.getStudentIdList().size();
-		int teacherCount = classRoom.getTeacherIdList().size();
-
-		float ratio = (float) studentCount / (float) teacherCount;
-		System.out.println("counts in class beofr addition : " + studentCount + " : " + teacherCount);
-		System.out.println("current ration of class will be : " + ratio + " .Ideal : " + classRoom.getGroupsize());
-
-		if (ratio >= classRoom.getGroupsize()) {
-			JOptionPane.showMessageDialog(this, "ClassRoom Limit is Reached", "Increase Teacher Count",
+		int validation = 0;
+		if(name ==null || name.equals("")|| name.equals(" ")) {
+			JOptionPane.showMessageDialog(this, "Name is mandatory", "Please enter Name",
 					JOptionPane.ERROR_MESSAGE);
-		} else {
-
-			if (id.isEmpty() || age.isEmpty() || name.isEmpty() || parentName.isEmpty() || parentContact.isEmpty()
-					|| rd.isEmpty()) {
-				JOptionPane.showMessageDialog(this, "Please Enter All Fields", "Try Again", JOptionPane.ERROR_MESSAGE);
-			} else {
-				DefaultTableModel model = (DefaultTableModel) tableStudents.getModel();
-				model.addRow(new Object[] { id, name, age, parentName, parentContact, rd });
+			validation = 1;
+		}
+		try {
+			if(age == null || age.equals("")|| age.equals(" ")) {
+				JOptionPane.showMessageDialog(this, "Age is not mentioned", "Please enter age",
+						JOptionPane.ERROR_MESSAGE);
+				validation = 1;
 			}
-			tfAge.setText("");
-			tfName.setText("");
-			tfParentName.setText("");
-			tfParentContact.setText("");
-			tfDate.setText("");
+			else if(Integer.parseInt(age) < 0 ) {
+				JOptionPane.showMessageDialog(this, "Age should be more than 0", "Please enter correct age",
+						JOptionPane.ERROR_MESSAGE);
+				validation=1;
+			}
+		}catch(NumberFormatException ex) {
+			JOptionPane.showMessageDialog(this, "Age should be a number", "Please enter a number",
+					JOptionPane.ERROR_MESSAGE);
+			validation=1;
+		}
 
-			String grade = "4";
-			String addr = "Boston";
-			String email = "kid@neu.edu";
-			String csv = id + "," + name + "," + age + "," + grade + "," + rd + "," + parentName + "," + addr + ","
-					+ parentContact + "," + email;
-			System.err.println(csv + "is added to student db");
+		if(parentName ==null || parentName.equals("")|| parentName.equals(" ")) {
+			JOptionPane.showMessageDialog(this, "parentName is mandatory", "Please enter parent name or guardian name",
+					JOptionPane.ERROR_MESSAGE);
+			validation = 1;
+		}
+		try {
+			if(parentContact == null || parentContact.equals("")|| parentContact.equals(" ")) {
+				JOptionPane.showMessageDialog(this, "Contact number is not mentioned", "Please enter contact number",
+						JOptionPane.ERROR_MESSAGE);
+				validation = 1;
+			}
+			else if(parentContact.length() != 10 ) {
+				JOptionPane.showMessageDialog(this, "Contact number is not valid", "Please enter valid contact number",
+						JOptionPane.ERROR_MESSAGE);
+				validation = 1;
+			}
+			Integer.parseInt(parentContact);
+		}catch(NumberFormatException ex) {
+			JOptionPane.showMessageDialog(this, "contact number should be a number", "Please enter a valid contact number",
+					JOptionPane.ERROR_MESSAGE);
+			validation=1;
+		}
+		if(rd==null || rd.equals("")|| rd.equals(" ")) {
+			JOptionPane.showMessageDialog(this, "Registration date is mandatory", "Please enter registration date",
+					JOptionPane.ERROR_MESSAGE);
+			validation=1;
+		}
+		else if(ConvertUtil.strToDate(rd) == null) {
+			JOptionPane.showMessageDialog(this, "Registration date Format is incorrect", "Please enter registration date in the MM/dd/yyyy format",
+					JOptionPane.ERROR_MESSAGE);
+			validation=1;
+		}
+		if(validation == 0) {
+			Classroom classRoom = ClassroomFactory.getClassRoom(Integer.parseInt(age));
+			System.out.print("classr room id is : " + classRoom.getClassId());
 
-			studentController.addStudent(csv);
+			int studentCount = classRoom.getStudentIdList().size();
+			int teacherCount = classRoom.getTeacherIdList().size();
 
-			classRoom.addStudentId(Integer.parseInt(id));
+			float ratio = (float) studentCount / (float) teacherCount;
+			System.out.println("counts in class beofr addition : " + studentCount + " : " + teacherCount);
+			System.out.println("current ration of class will be : " + ratio + " .Ideal : " + classRoom.getGroupsize());
 
-			ClassroomFactory.showAllClassrooms();
+			if (ratio >= classRoom.getGroupsize()) {
+				JOptionPane.showMessageDialog(this, "ClassRoom Limit is Reached", "Increase Teacher Count",
+						JOptionPane.ERROR_MESSAGE);
+			} else {
 
+				if (id.isEmpty() || age.isEmpty() || name.isEmpty() || parentName.isEmpty() || parentContact.isEmpty()
+						|| rd.isEmpty()) {
+					JOptionPane.showMessageDialog(this, "Please Enter All Fields", "Try Again", JOptionPane.ERROR_MESSAGE);
+				} else {
+					DefaultTableModel model = (DefaultTableModel) tableStudents.getModel();
+					model.addRow(new Object[] { id, name, age, parentName, parentContact, rd });
+				}
+				tfAge.setText("");
+				tfName.setText("");
+				tfParentName.setText("");
+				tfParentContact.setText("");
+				tfDate.setText("");
+
+				String grade = "4";
+				String addr = "Boston";
+				String email = "kid@neu.edu";
+				String csv = id + "," + name + "," + age + "," + grade + "," + rd + "," + parentName + "," + addr + ","
+						+ parentContact + "," + email;
+				System.err.println(csv + "is added to student db");
+
+				studentController.addStudent(csv);
+
+				classRoom.addStudentId(Integer.parseInt(id));
+
+				ClassroomFactory.showAllClassrooms();
+
+			}
 		}
 	}// GEN-LAST:event_btnAddActionPerformed
 
@@ -419,14 +472,14 @@ public class StudentsjPanel extends javax.swing.JPanel {
 	}// GEN-LAST:event_tfParentContactActionPerformed
 
 	private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDeleteActionPerformed
-//        int row = tableStudents.getSelectedRow();
-//
-//        if (row < 0 ) {
-//            JOptionPane.showMessageDialog(this, "No Row is Selected", "Please Select Row", JOptionPane.ERROR_MESSAGE);
-//        } else {
-//            DefaultTableModel model = (DefaultTableModel)tableStudents.getModel();
-//            model.removeRow(row);
-//        }
+		//        int row = tableStudents.getSelectedRow();
+		//
+		//        if (row < 0 ) {
+		//            JOptionPane.showMessageDialog(this, "No Row is Selected", "Please Select Row", JOptionPane.ERROR_MESSAGE);
+		//        } else {
+		//            DefaultTableModel model = (DefaultTableModel)tableStudents.getModel();
+		//            model.removeRow(row);
+		//        }
 
 		int row = tableStudents.getSelectedRow();
 		if (row < 0) {
@@ -454,8 +507,8 @@ public class StudentsjPanel extends javax.swing.JPanel {
 		} else {
 			// int pkid = (int)tableTeachers.getModel().getValueAt(row, 0);
 			DefaultTableModel model = (DefaultTableModel) tableStudents.getModel();
-//            String k = model.getValueAt(0, 0).toString();
-//            System.err.println(k + " is about to deleted : " + row);
+			//            String k = model.getValueAt(0, 0).toString();
+			//            System.err.println(k + " is about to deleted : " + row);
 
 			int pkid = Integer.parseInt(model.getValueAt(row, 0).toString());
 			// model.removeRow(row);
