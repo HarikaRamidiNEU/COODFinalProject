@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.springframework.stereotype.Component;
-
 import edu.neu.csye6200.model.Classroom;
 
 public class ClassroomFactory {
