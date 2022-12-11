@@ -269,7 +269,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 
 		getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-		workPanel.setPreferredSize(new java.awt.Dimension(1000, 750));
+		workPanel.setPreferredSize(new java.awt.Dimension(1000, 800));
 
 		jSplitPane1.setDividerLocation(200);
 		jSplitPane1.setDividerSize(1);
@@ -440,7 +440,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 			}
 		});
 
-		jLabel4.setFont(new java.awt.Font("Hiragino Sans GB", 1, 36)); // NOI18N
+		jLabel4.setFont(new java.awt.Font("Hiragino Sans GB", 1, 22)); // NOI18N
 		jLabel4.setForeground(backgroundColor);
 		jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel4.setText("DAYCARE REGISTRATION");

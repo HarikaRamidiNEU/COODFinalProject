@@ -111,7 +111,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		btnDelete1 = new javax.swing.JButton();
 
 		setBackground(new java.awt.Color(255, 255, 255));
-		setPreferredSize(new java.awt.Dimension(900, 720));
+		setPreferredSize(new java.awt.Dimension(800, 720));
 
 		jLabel3.setBackground(new java.awt.Color(153, 255, 153));
 		jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

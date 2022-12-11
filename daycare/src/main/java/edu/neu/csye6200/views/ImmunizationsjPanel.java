@@ -5,6 +5,7 @@
  */
 package edu.neu.csye6200.views;
 
+import java.awt.Color;
 import java.util.Calendar;
 import java.util.List;
 
@@ -91,7 +92,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 		tableVaccines = new javax.swing.JTable();
 
 		setBackground(new java.awt.Color(255, 255, 255));
-		setPreferredSize(new java.awt.Dimension(900, 720));
+		setPreferredSize(new java.awt.Dimension(800, 720));
 
 		jLabel3.setBackground(new java.awt.Color(153, 255, 153));
 		jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -313,7 +314,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 
 		tableVaccines.setBackground(new java.awt.Color(153, 204, 255));
 		tableVaccines.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-		tableVaccines.setForeground(new java.awt.Color(0, 51, 204));
+		tableVaccines.setForeground(Color.WHITE);
 		tableVaccines.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 
 		}, new String[] { "Person Id", "Vaccine1", "Dose 1", "Dose 2", "Vaccine2", "Dose1" }) {

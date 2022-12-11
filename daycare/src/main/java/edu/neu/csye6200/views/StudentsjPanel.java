@@ -113,7 +113,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 
 		setBackground(new java.awt.Color(255, 255, 255));
 		setBorder(new javax.swing.border.MatteBorder(null));
-		setPreferredSize(new java.awt.Dimension(900, 720));
+		setPreferredSize(new java.awt.Dimension(800, 720));
 
 		jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "New Student",
 				javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION,
