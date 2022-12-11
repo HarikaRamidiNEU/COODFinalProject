@@ -83,6 +83,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 		loginPanel = new javax.swing.JPanel();
 		jLabel3 = new javax.swing.JLabel();
 		txtUserName = new javax.swing.JTextField();
+		txtValidation = new javax.swing.JLabel("Invalid Username/Password");
 		jSeparator1 = new javax.swing.JSeparator();
 		jLabel2 = new javax.swing.JLabel();
 		txtPassword = new javax.swing.JPasswordField();
@@ -121,6 +122,11 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 
 		txtUserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		txtUserName.setBorder(null);
+		
+		txtValidation.setFont(new java.awt.Font("Arial", Font.BOLD, 14));
+		txtValidation.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+		txtValidation.setBorder(null);
+		txtValidation.setVisible(false);
 
 		jLabel2.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
 		jLabel2.setText("PASSWORD");
@@ -200,6 +206,11 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 																										txtPassword,
 																										javax.swing.GroupLayout.PREFERRED_SIZE,
 																										210,
+																										javax.swing.GroupLayout.PREFERRED_SIZE)
+																								.addComponent(
+																										txtValidation,
+																										javax.swing.GroupLayout.PREFERRED_SIZE,
+																										210,
 																										javax.swing.GroupLayout.PREFERRED_SIZE))
 																				.addGroup(
 																						javax.swing.GroupLayout.Alignment.TRAILING,
@@ -237,6 +248,11 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 										.addGap(19, 19, 19).addComponent(jLabel2).addGap(3, 3, 3)
 										.addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+										.addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 9,
+												javax.swing.GroupLayout.PREFERRED_SIZE)
+										.addGap(18, 18, 18)
+										.addComponent(txtValidation)
 										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
 										.addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 9,
 												javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -471,12 +487,16 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 	}// GEN-END:initComponents
 
 	private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLoginActionPerformed
+		txtValidation.setVisible(false);
 		String userName = txtUserName.getText();
 		String password = String.valueOf(txtPassword.getPassword());
 
 		if (userName.equals("Admin") && password.equals("password")) {
 			Thread t = new Thread(this);
 			t.start();
+		}
+		else {
+			txtValidation.setVisible(true);
 		}
 	}// GEN-LAST:event_btnLoginActionPerformed
 
@@ -625,6 +645,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 	private javax.swing.JTextArea txtGroupMembers;
 	private javax.swing.JPasswordField txtPassword;
 	private javax.swing.JTextField txtUserName;
+	private javax.swing.JLabel txtValidation;
 	private javax.swing.JPanel workPanel;
 	// End of variables declaration//GEN-END:variables
 
