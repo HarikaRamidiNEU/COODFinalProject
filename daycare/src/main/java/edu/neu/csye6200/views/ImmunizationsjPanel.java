@@ -91,7 +91,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 		tableVaccines = new javax.swing.JTable();
 
 		setBackground(new java.awt.Color(255, 255, 255));
-		setPreferredSize(new java.awt.Dimension(800, 720));
+		setPreferredSize(new java.awt.Dimension(900, 720));
 
 		jLabel3.setBackground(new java.awt.Color(153, 255, 153));
 		jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -204,6 +204,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 			}
 		});
 
+		Renewal1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 		Renewal1.setForeground(java.awt.Color.blue);
 		Renewal1.setLabel("Alert");
 		Renewal1.addActionListener(new java.awt.event.ActionListener() {
@@ -310,12 +311,12 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 								.addComponent(Renewal1, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
 						.addGap(0, 9, Short.MAX_VALUE)));
 
-		tableVaccines.setBackground(new java.awt.Color(204, 204, 204));
-		tableVaccines.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		tableVaccines.setForeground(new java.awt.Color(153, 153, 153));
+		tableVaccines.setBackground(new java.awt.Color(153, 204, 255));
+		tableVaccines.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		tableVaccines.setForeground(new java.awt.Color(0, 51, 204));
 		tableVaccines.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 
-		}, new String[] { "personID", "vaccine1", "dose1", "dose2", "vaccine2", "dose1" }) {
+		}, new String[] { "Person Id", "Vaccine1", "Dose 1", "Dose 2", "Vaccine2", "Dose1" }) {
 			boolean[] canEdit = new boolean[] { false, true, true, true, true, true };
 
 			public boolean isCellEditable(int rowIndex, int columnIndex) {

@@ -40,17 +40,18 @@ public class ClassesjPanel extends javax.swing.JPanel {
 		tableClassroom = new javax.swing.JTable();
 
 		setBackground(new java.awt.Color(255, 255, 255));
-		setPreferredSize(new java.awt.Dimension(800, 720));
+		setPreferredSize(new java.awt.Dimension(900, 720));
 
 		jLabel3.setBackground(new java.awt.Color(153, 255, 153));
 		jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 		jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-		tableClassroom.setBackground(new java.awt.Color(204, 204, 204));
-		tableClassroom.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+		tableClassroom.setBackground(new java.awt.Color(153, 204, 255));
+		tableClassroom.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		tableClassroom.setForeground(new java.awt.Color(0, 51, 204));
 		tableClassroom.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 
-		}, new String[] { "classId", "ageGroup", "teacherList", "studentList" }));
+		}, new String[] { "Class Id", "Age Group", "Teacher Ids", "Student Ids" }));
 		jScrollPane4.setViewportView(tableClassroom);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

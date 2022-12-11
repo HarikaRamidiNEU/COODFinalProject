@@ -30,7 +30,12 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 	ClassesjPanel classesjPanel;
 	@Autowired
 	ImmunizationsjPanel vaccinationsjPanel;
-
+	
+	private Color backgroundColor = new java.awt.Color(255, 255, 255);
+	private Color loginBackgroundColor = new java.awt.Color(127, 120, 250);
+	private Color sideLabelBackground = new java.awt.Color(114, 179, 236);
+	private Color jPanel3Bg = new java.awt.Color(114, 179, 236);
+	
 	boolean flag = false;
 
 	/** Creates new form MainFrame */
@@ -108,8 +113,8 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 		setResizable(false);
 		getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-		loginPanel.setBackground(new java.awt.Color(167, 240, 250));
-		loginPanel.setPreferredSize(new java.awt.Dimension(1000, 750));
+		loginPanel.setBackground(loginBackgroundColor);
+		loginPanel.setPreferredSize(new java.awt.Dimension(1000, 800));
 
 		jLabel3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
 		jLabel3.setText("USERID");
@@ -254,15 +259,15 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 		jSplitPane1.setDividerSize(1);
 		jSplitPane1.setPreferredSize(new java.awt.Dimension(1000, 720));
 
-		jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+		jPanel2.setBackground(backgroundColor);
 		jPanel2.setPreferredSize(new java.awt.Dimension(800, 720));
 
 		txtGroupMembers.setColumns(20);
 		txtGroupMembers.setFont(new java.awt.Font("Hiragino Sans GB", 0, 14)); // NOI18N
 		txtGroupMembers.setRows(5);
 		txtGroupMembers.setBorder(null);
-		txtGroupMembers.setCaretColor(new java.awt.Color(255, 255, 255));
-		txtGroupMembers.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+		txtGroupMembers.setCaretColor(backgroundColor);
+		txtGroupMembers.setDisabledTextColor(backgroundColor);
 		jScrollPane1.setViewportView(txtGroupMembers);
 
 		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -279,13 +284,13 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 
 		jSplitPane1.setRightComponent(jPanel2);
 
-		jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+		jPanel1.setBackground(backgroundColor);
 		jPanel1.setPreferredSize(new java.awt.Dimension(200, 720));
 
-		jPanel6.setBackground(new java.awt.Color(0, 102, 153));
+		jPanel6.setBackground(sideLabelBackground);
 
 		lblStudents.setFont(new java.awt.Font("Hiragino Sans GB", 1, 20)); // NOI18N
-		lblStudents.setForeground(new java.awt.Color(255, 255, 255));
+		lblStudents.setForeground(backgroundColor);
 		lblStudents.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		lblStudents.setText("STUDENTS");
 		lblStudents.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -307,10 +312,10 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 								javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
 						.addContainerGap(31, Short.MAX_VALUE)));
 
-		jPanel4.setBackground(new java.awt.Color(0, 102, 153));
+		jPanel4.setBackground(sideLabelBackground);
 
 		lblTeachers.setFont(new java.awt.Font("Hiragino Sans GB", 0, 20)); // NOI18N
-		lblTeachers.setForeground(new java.awt.Color(255, 255, 255));
+		lblTeachers.setForeground(backgroundColor);
 		lblTeachers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		lblTeachers.setText("TEACHERS");
 		lblTeachers.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -331,10 +336,10 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 						.addComponent(lblTeachers, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
 						.addContainerGap()));
 
-		jPanel5.setBackground(new java.awt.Color(0, 102, 153));
+		jPanel5.setBackground(sideLabelBackground);
 
 		lblClasses.setFont(new java.awt.Font("Hiragino Sans GB", 0, 20)); // NOI18N
-		lblClasses.setForeground(new java.awt.Color(255, 255, 255));
+		lblClasses.setForeground(backgroundColor);
 		lblClasses.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		lblClasses.setText("CLASSES");
 		lblClasses.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -353,10 +358,10 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 		jPanel5Layout.setVerticalGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
 				.addComponent(lblClasses, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE));
 
-		jPanel7.setBackground(new java.awt.Color(0, 102, 153));
+		jPanel7.setBackground(sideLabelBackground);
 
 		lblImmunizations.setFont(new java.awt.Font("Hiragino Sans GB", 0, 20)); // NOI18N
-		lblImmunizations.setForeground(new java.awt.Color(255, 255, 255));
+		lblImmunizations.setForeground(backgroundColor);
 		lblImmunizations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		lblImmunizations.setText("IMMUNIZATION");
 		lblImmunizations.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -410,7 +415,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 
 		jSplitPane1.setLeftComponent(jPanel1);
 
-		jPanel3.setBackground(new java.awt.Color(0, 51, 204));
+		jPanel3.setBackground(jPanel3Bg);
 
 		jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login-png.png"))); // NOI18N
 		jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -420,7 +425,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 		});
 
 		jLabel4.setFont(new java.awt.Font("Hiragino Sans GB", 1, 36)); // NOI18N
-		jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+		jLabel4.setForeground(backgroundColor);
 		jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 		jLabel4.setText("DAYCARE REGISTRATION");
 
@@ -510,7 +515,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 
 	public void setBgTeachers() {
 
-		lblTeachers.setForeground(new Color(204, 0, 51));
+		lblTeachers.setForeground(new Color(172, 0, 30));
 		lblTeachers.setFont(new Font("Hiragino Sans GB", Font.BOLD, 20));
 
 		lblStudents.setForeground(Color.white);
@@ -522,7 +527,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 	}
 
 	public void setBgStudents() {
-		lblStudents.setForeground(new Color(204, 0, 51));
+		lblStudents.setForeground(new Color(172, 0, 30));
 		lblStudents.setFont(new Font("Hiragino Sans GB", Font.BOLD, 20));
 
 		lblTeachers.setForeground(Color.white);
@@ -534,7 +539,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 	}
 
 	public void setBgImmunization() {
-		lblImmunizations.setForeground(new Color(204, 0, 51));
+		lblImmunizations.setForeground(new Color(172, 0, 30));
 		lblImmunizations.setFont(new Font("Hiragino Sans GB", Font.BOLD, 20));
 
 		lblTeachers.setForeground(Color.white);
@@ -546,7 +551,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 	}
 
 	public void setBgClasses() {
-		lblClasses.setForeground(new Color(204, 0, 51));
+		lblClasses.setForeground(new Color(172, 0, 30));
 		lblClasses.setFont(new Font("Hiragino Sans GB", Font.BOLD, 20));
 
 		lblTeachers.setForeground(Color.white);

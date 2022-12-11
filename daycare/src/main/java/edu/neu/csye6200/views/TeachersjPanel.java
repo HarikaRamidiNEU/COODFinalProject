@@ -111,7 +111,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		btnDelete1 = new javax.swing.JButton();
 
 		setBackground(new java.awt.Color(255, 255, 255));
-		setPreferredSize(new java.awt.Dimension(800, 720));
+		setPreferredSize(new java.awt.Dimension(900, 720));
 
 		jLabel3.setBackground(new java.awt.Color(153, 255, 153));
 		jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -125,8 +125,9 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		jPanel4.setForeground(java.awt.Color.gray);
 		jPanel4.setOpaque(false);
 
+		jLabel11.setBackground(new java.awt.Color(0, 153, 255));
+		jLabel11.setForeground(new java.awt.Color(0, 51, 204));
 		jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		jLabel11.setForeground(java.awt.Color.gray);
 		jLabel11.setText("Name");
 
 		tfName1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -138,15 +139,17 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		});
 
 		jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		jLabel12.setForeground(java.awt.Color.gray);
+		jLabel12.setBackground(new java.awt.Color(0, 153, 255));
+		jLabel12.setForeground(new java.awt.Color(0, 51, 204));
 		jLabel12.setText("Age");
 
 		jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		jLabel13.setForeground(java.awt.Color.gray);
+		jLabel13.setBackground(new java.awt.Color(0, 153, 255));
+		jLabel13.setForeground(new java.awt.Color(0, 51, 204));
 		jLabel13.setText("Ratings");
 
 		btnAdd1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		btnAdd1.setForeground(new java.awt.Color(51, 51, 51));
+		btnAdd1.setForeground(new java.awt.Color(0, 51, 204));
 		btnAdd1.setText("Add");
 		btnAdd1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +158,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		});
 
 		btnClear1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		btnClear1.setForeground(new java.awt.Color(51, 51, 51));
+		btnClear1.setForeground(new java.awt.Color(0, 51, 204));
 		btnClear1.setText("Clear");
 		btnClear1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,9 +166,9 @@ public class TeachersjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		tableTeachers.setBackground(new java.awt.Color(204, 204, 204));
-		tableTeachers.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-		tableTeachers.setForeground(new java.awt.Color(102, 102, 102));
+		tableTeachers.setBackground(new java.awt.Color(153, 204, 255));
+		tableTeachers.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		tableTeachers.setForeground(new java.awt.Color(0, 51, 204));
 		tableTeachers.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 
 		}, new String[] { "Id", "Name", "Age", "Ratings" }));
@@ -194,6 +197,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 
 		btnDelete1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 		btnDelete1.setText("Delete");
+		btnDelete1.setForeground(new java.awt.Color(0, 51, 204));
 		btnDelete1.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				btnDelete1ActionPerformed(evt);
