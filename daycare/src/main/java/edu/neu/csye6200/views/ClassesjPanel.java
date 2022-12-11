@@ -47,7 +47,7 @@ public class ClassesjPanel extends javax.swing.JPanel {
 		jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
 		tableClassroom.setBackground(new java.awt.Color(153, 204, 255));
-		tableClassroom.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		tableClassroom.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		tableClassroom.setForeground(new java.awt.Color(0, 51, 204));
 		tableClassroom.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 

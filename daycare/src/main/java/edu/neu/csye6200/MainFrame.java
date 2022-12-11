@@ -117,24 +117,24 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
 		loginPanel.setBackground(loginBackgroundColor);
 		loginPanel.setPreferredSize(new java.awt.Dimension(1000, 800));
 
-		jLabel3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+		jLabel3.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
 		jLabel3.setText("USERID");
 
 		txtUserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		txtUserName.setBorder(null);
 		
-		txtValidation.setFont(new java.awt.Font("Arial", Font.BOLD, 14));
+		txtValidation.setFont(new java.awt.Font("Calibri", Font.BOLD, 14));
 		txtValidation.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		txtValidation.setBorder(null);
 		txtValidation.setVisible(false);
 
-		jLabel2.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+		jLabel2.setFont(new java.awt.Font("Calibri", 3, 14)); // NOI18N
 		jLabel2.setText("PASSWORD");
 
 		txtPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 		txtPassword.setBorder(null);
 
-		btnLogin.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		btnLogin.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		btnLogin.setText("LOGIN");
 		btnLogin.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {

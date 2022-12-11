@@ -105,7 +105,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 		jPanel5.setForeground(java.awt.Color.blue);
 		jPanel5.setOpaque(false);
 
-		jLabel16.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel16.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel16.setForeground(java.awt.Color.blue);
 		jLabel16.setText("Id");
 
@@ -117,11 +117,11 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel17.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel17.setForeground(java.awt.Color.blue);
 		jLabel17.setText("Vaccine One");
 
-		jLabel18.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel18.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel18.setForeground(java.awt.Color.blue);
 		jLabel18.setText("First Dose");
 
@@ -133,11 +133,11 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		jLabel19.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel19.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel19.setForeground(java.awt.Color.blue);
 		jLabel19.setText("Second Dose");
 
-		jLabel20.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel20.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel20.setForeground(java.awt.Color.blue);
 		jLabel20.setText("Vaccine Two");
 
@@ -167,7 +167,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		jLabel21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel21.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel21.setForeground(java.awt.Color.blue);
 		jLabel21.setText("First Dose");
 
@@ -312,7 +312,7 @@ public class ImmunizationsjPanel extends javax.swing.JPanel {
 						.addGap(0, 9, Short.MAX_VALUE)));
 
 		tableVaccines.setBackground(new java.awt.Color(153, 204, 255));
-		tableVaccines.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		tableVaccines.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		tableVaccines.setForeground(new java.awt.Color(0, 51, 204));
 		tableVaccines.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 

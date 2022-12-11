@@ -122,7 +122,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 		jPanel3.setOpaque(false);
 
 		jLabel5.setBackground(new java.awt.Color(0, 153, 255));
-		jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel5.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel5.setForeground(new java.awt.Color(0, 51, 204));
 		jLabel5.setText("Student Name");
 
@@ -134,7 +134,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel6.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel6.setForeground(new java.awt.Color(0, 0, 204));
 		jLabel6.setText("Age");
 
@@ -146,7 +146,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel7.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel7.setForeground(new java.awt.Color(0, 0, 204));
 		jLabel7.setText("Parent Name");
 
@@ -158,7 +158,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel8.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel8.setForeground(new java.awt.Color(0, 0, 204));
 		jLabel8.setText("Parent Contact");
 
@@ -170,7 +170,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		btnAdd.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		btnAdd.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		btnAdd.setForeground(new java.awt.Color(0, 0, 153));
 		btnAdd.setText("Add Student");
 		btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +179,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		btnClear.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		btnClear.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		btnClear.setForeground(new java.awt.Color(0, 0, 153));
 		btnClear.setText("Clear Selection");
 		btnClear.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +188,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		jLabel14.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		jLabel14.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		jLabel14.setForeground(new java.awt.Color(0, 0, 204));
 		jLabel14.setText("Registration Date");
 
@@ -200,7 +200,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		btnDelete.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		btnDelete.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		btnDelete.setForeground(new java.awt.Color(0, 0, 153));
 		btnDelete.setText("Delete");
 		btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +209,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 			}
 		});
 
-		Renewal.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+		Renewal.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
 		Renewal.setForeground(new java.awt.Color(0, 0, 153));
 		Renewal.setLabel("Renew");
 		Renewal.addActionListener(new java.awt.event.ActionListener() {
@@ -306,7 +306,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
 						.addContainerGap(22, Short.MAX_VALUE)));
 
 		tableStudents.setBackground(new java.awt.Color(153, 204, 255));
-		tableStudents.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		tableStudents.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		tableStudents.setForeground(new java.awt.Color(0, 51, 204));
 		tableStudents.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 

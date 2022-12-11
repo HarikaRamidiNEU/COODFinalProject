@@ -167,7 +167,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		});
 
 		tableTeachers.setBackground(new java.awt.Color(153, 204, 255));
-		tableTeachers.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+		tableTeachers.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
 		tableTeachers.setForeground(new java.awt.Color(0, 51, 204));
 		tableTeachers.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
 
@@ -301,24 +301,35 @@ public class TeachersjPanel extends javax.swing.JPanel {
 		String id = String.valueOf(generateID());
 		String age = tfAge1.getText();
 		String name = tfName1.getText();
-		String credit = tfCredits.getText();
+		String rating = tfCredits.getText();
 
-		if (id.isEmpty() || age.isEmpty() || name.isEmpty() || credit.isEmpty()) {
+		if (rating.isEmpty() || age.isEmpty() || name.isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Please Enter All Fields", "Try Again", JOptionPane.ERROR_MESSAGE);
 		} else {
+			try {
+				Integer.parseInt(age);
+			}catch(NumberFormatException ex) {
+				JOptionPane.showMessageDialog(this, "Please Enter valid age", "Try Again", JOptionPane.ERROR_MESSAGE);
+			}
+			try {
+				if(Integer.parseInt(rating)>5 || Integer.parseInt(rating)<1) {
+					JOptionPane.showMessageDialog(this, "Rating should be between 1 and 5", "Try Again", JOptionPane.ERROR_MESSAGE);
+				}
+			}catch(NumberFormatException ex) {
+				JOptionPane.showMessageDialog(this, "Please Enter valid rating", "Try Again", JOptionPane.ERROR_MESSAGE);
+			}
 			DefaultTableModel model = (DefaultTableModel) tableTeachers.getModel();
-			model.addRow(new Object[] { id, name, age, credit });
+			model.addRow(new Object[] { id, name, age, rating });
+			tfAge1.setText("");
+			tfName1.setText("");
+			tfCredits.setText("");
+			String csv = id + "," + name + "," + age + "," + rating;
+			System.err.println(csv + "is added to teache db");
+			teacherController.addTeacher(csv);
+			ClassroomFactory.getAllClassRooms().get(ClassroomFactory.getAllClassRooms().size() - 1)
+					.addTeacherId(Integer.parseInt(id));
 		}
 
-//		tfId1.setText("");
-		tfAge1.setText("");
-		tfName1.setText("");
-		tfCredits.setText("");
-		String csv = id + "," + name + "," + age + "," + credit;
-		System.err.println(csv + "is added to teache db");
-		teacherController.addTeacher(csv);
-		ClassroomFactory.getAllClassRooms().get(ClassroomFactory.getAllClassRooms().size() - 1)
-				.addTeacherId(Integer.parseInt(id));
 	}// GEN-LAST:event_btnAdd1ActionPerformed
 
 	private void btnClear1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnClear1ActionPerformed
