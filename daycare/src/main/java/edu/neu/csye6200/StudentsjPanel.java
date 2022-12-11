@@ -57,19 +57,15 @@ public class StudentsjPanel extends javax.swing.JPanel {
     public void populateStudent() {
         List<Student> students = studentController.getStudents();
 
-        if (students.size() == 0) {
+        if (students.size() > 0) {
             studentController.addTestData();
             // add students to classes
 
             List<Student> newStudents = studentController.getStudents();
             newStudents.forEach(s -> {
-
                 Classroom classRoom = ClassroomFactory.getClassRoom(s.getAge());
                 classRoom.addStudentId(s.getId());
-
             });
-
-        } else {
             DefaultTableModel model = (DefaultTableModel) tableStudents.getModel();
 
             if (model.getRowCount() == 0) {
@@ -77,8 +73,10 @@ public class StudentsjPanel extends javax.swing.JPanel {
                     model.addRow(new Object[]{t.getId(), t.getName(), t.getAge(), t.getParentName(), t.getPhoneNumber(), t.getRegistrationDate()});
                 });
             }
-
-        }
+        } 
+//        else {
+//           
+//        }
     }
     
     private int generateID() {
@@ -87,8 +85,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
         String datetime = ft.format(dNow);
         return Integer.parseInt(datetime);
 	}
-
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -384,7 +381,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
         String parentContact = tfParentContact.getText();
         String rd = tfDate.getText();
 
-        Classroom classRoom = ClassroomFactory.getClassRoom(Integer.parseInt(age));
+        Classroom classRoom = classroomFactory.getClassRoom(Integer.parseInt(age));
         System.out.print("classr room id is : " + classRoom.getClassId());
 
         int studentCount = classRoom.getStudentIdList().size();
@@ -465,7 +462,7 @@ public class StudentsjPanel extends javax.swing.JPanel {
             int age = studentController.readStudentById(pkid).get().getAge();
             studentController.removeStudentById(pkid);
 
-            Classroom classRoom = ClassroomFactory.getClassRoom(age);
+            Classroom classRoom = classroomFactory.getClassRoom(age);
             classRoom.deleteStudentId(pkid);
         }
     }//GEN-LAST:event_btnDeleteActionPerformed

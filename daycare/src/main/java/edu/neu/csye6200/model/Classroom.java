@@ -80,7 +80,7 @@ public class Classroom {
     public String toString() {
         return "Student List :: " + Arrays.toString(this.studentIdList.toArray()) + "/n"
                 + "Teachers List :: " + Arrays.toString(this.teacherIdList.toArray()) + "/n"
-                + "S/T Ratio :: " + this.studentIdList.size() / this.teacherIdList.size() + "/n"
+//                + "S/T Ratio :: " + this.studentIdList.size() / this.teacherIdList.size() + "/n"
                 + "Max Allowed Groups :: " + this.getMaxGroups() + "\n"
                 + "Group Size :: " + this.getGroupsize() + "\n"
                 + "Age Group :: " + this.min_age + "-" + this.max_age; //To change body of generated methods, choose Tools | Templates.

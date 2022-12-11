@@ -105,7 +105,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginPanel.setBackground(new java.awt.Color(255, 252, 45));
+        loginPanel.setBackground(new java.awt.Color(167, 240, 250 ));
         loginPanel.setPreferredSize(new java.awt.Dimension(1000, 750));
 
         jLabel3.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N

@@ -58,7 +58,7 @@ public class TeachersjPanel extends javax.swing.JPanel {
 	private void populateBodyTeacher() {
 		List<Teacher> teachers = teacherController.getAllTeachers();
 
-		if (teachers.size() == 0) {
+		if (teachers.size() > 0) {
 			teacherController.addTestData();
 
 			// Add teachers to classroom
@@ -74,21 +74,29 @@ public class TeachersjPanel extends javax.swing.JPanel {
 					}
 					counter += tempCounter;
 				}
+				DefaultTableModel model = (DefaultTableModel) tableTeachers.getModel();
+
+				if (model.getRowCount() == 0) {
+					teachers.forEach(t -> {
+						model.addRow(new Object[]{t.getId(), t.getName(), t.getAge(), t.getCredits()});
+					});
+				}
 			} catch (Exception ex) {
 				System.out.println("****** Not Enough Teachers. Please Add at least 16 teachers ****");
 				System.exit(1);
 			}
 
-		} else {
-			DefaultTableModel model = (DefaultTableModel) tableTeachers.getModel();
-
-			if (model.getRowCount() == 0) {
-				teachers.forEach(t -> {
-					model.addRow(new Object[]{t.getId(), t.getName(), t.getAge(), t.getCredits()});
-				});
-			}
-
-		}
+		} 
+//			else {
+//			DefaultTableModel model = (DefaultTableModel) tableTeachers.getModel();
+//
+//			if (model.getRowCount() == 0) {
+//				teachers.forEach(t -> {
+//					model.addRow(new Object[]{t.getId(), t.getName(), t.getAge(), t.getCredits()});
+//				});
+//			}
+//
+//		}
 
 	}
 	
